@@ -1,4 +1,4 @@
-package com.nativuks.jetpackcomposeplayground
+package com.nativuks.jetpackcomposeplayground.components
 
 
 import androidx.compose.foundation.background

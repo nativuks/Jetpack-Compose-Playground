@@ -1,4 +1,4 @@
-package com.nativuks.jetpackcomposeplayground
+package com.nativuks.jetpackcomposeplayground.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -36,27 +36,45 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
-
-
-
 @Composable
-fun MyState() {
-    var counter by rememberSaveable { mutableStateOf(0) }
+fun MyText() {
+
     Column(
         Modifier
             .fillMaxSize()
-            .background(Color.White), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-        Button(onClick = { counter += 1}){
-            Text("Press")
-        }
-        Text(text = "He sido pulsado  $counter veces")
+            .background(Color.White)
+    ) {
+        Text("Esto es un ejemplo")
+        Text("Esto es un ejmplo1", color = Color.Blue)
+        Text("Esto es un ejmplo1", fontWeight = FontWeight.ExtraBold)
+        Text("Esto es un ejmplo1", fontWeight = FontWeight.Light)
+        Text("Esto es un ejmplo1", fontWeight = FontWeight.ExtraLight)
+        Text("Esto es un ejmplo1", style = TextStyle(fontFamily = FontFamily.Cursive))
+        Text("Esto es un ejmplo1", style = TextStyle(textDecoration = TextDecoration.LineThrough))
+        Text("Esto es un ejmplo1", style = TextStyle(textDecoration = TextDecoration.Underline))
+        Text("Esto es un ejmplo1", style = TextStyle(textDecoration = TextDecoration.None))
+        Text(
+            "Esto es un ejmplo1", style = TextStyle(
+                textDecoration = TextDecoration.combine(
+                    listOf(TextDecoration.LineThrough, TextDecoration.Underline)
+                )
+            )
+        )
+
+        Text("Esto es un ejmplo1", textDecoration = TextDecoration.Underline)
+        Text("Esto es un ejmplo1", fontSize = 30.sp)
+
+
     }
+
 }
