@@ -1,4 +1,4 @@
-package com.nativuks.jetpackcomposeplayground
+package com.nativuks.jetpackcomposeplayground.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -19,7 +19,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,9 +41,10 @@ fun Login() {
         val (logoContainer, signUpContainer,) = createRefs()
         val topGuide = createGuidelineFromTop(0f)
         Box(modifier = Modifier
+            .background(Color.Gray)
             .padding(3.dp)
             .constrainAs(logoContainer) {
-                top.linkTo(parent.top)
+                top.linkTo(parent.top,  5.dp)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
                 bottom.linkTo(signUpContainer.top, margin = 70.dp)

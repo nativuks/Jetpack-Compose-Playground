@@ -10,7 +10,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.nativuks.jetpackcomposeplayground.components.CustomTextField
 import com.nativuks.jetpackcomposeplayground.components.DemoButtons
+import com.nativuks.jetpackcomposeplayground.components.DemoImages
+import com.nativuks.jetpackcomposeplayground.components.DemoTextFields
+
+import com.nativuks.jetpackcomposeplayground.screens.Login
 import com.nativuks.jetpackcomposeplayground.ui.theme.JetpackComposePlaygroundTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,7 +30,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                    // Greeting("Android")
                     //DemoButtons()
-                    Login()
+                    //Login()
+                    //ConstraitExampleLayout()
+                    //DemoTextFields()
+                    DemoImages()
                 }
             }
         }
