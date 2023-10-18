@@ -165,65 +165,46 @@ fun CustomTextField() {
     val lightBlue = Color(0xffd8e6ff)
     val blue = Color(0xFF85ADF0)
 
-        Text(
-            text = "Custom TextField",
-            modifier = Modifier
-                //.fillMaxWidth()
-                .padding(bottom = 4.dp),
-            textAlign = TextAlign.Start,
-            color = blue
-        )
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 5.dp, end = 5.dp),
-            value = textState,
+    Text(
+        text = "Custom TextField",
+        modifier = Modifier
+            //.fillMaxWidth()
+            .padding(bottom = 4.dp),
+        textAlign = TextAlign.Start,
+        color = blue
+    )
+    TextField(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 5.dp, end = 5.dp),
+        value = textState,
 
-            colors = TextFieldDefaults.textFieldColors(
+        colors = TextFieldDefaults.textFieldColors(
 
-                textColor = lightBlue,
-                containerColor = blue,
-                cursorColor = lightBlue,
-                disabledLabelColor = lightBlue,
-                focusedIndicatorColor = Color.Yellow,
+            textColor = lightBlue,
+            containerColor = blue,
+            cursorColor = lightBlue,
+            disabledLabelColor = lightBlue,
+            focusedIndicatorColor = Color.Yellow,
 
-                unfocusedIndicatorColor = Color.Transparent
-            ),
-            label = {Text("Label")},
-            onValueChange = {
-                if (it.length <= maxLength) textState = it
-            },
-            shape = RoundedCornerShape(8.dp),
+            unfocusedIndicatorColor = Color.Transparent
+        ),
+        label = { Text("Label") },
+        onValueChange = {
+            if (it.length <= maxLength) textState = it
+        },
+        shape = RoundedCornerShape(8.dp),
 
-            singleLine = true,
-            trailingIcon = {
-                if (textState.isNotEmpty()) {
-                    IconButton(
-                        modifier = Modifier
-                            //.graphicsLayer {shape = RoundedCornerShape(50.dp)  }
-                            .width(48.dp)
-                            .height(48.dp)
-                            .padding(0.dp)
-                            .clip(shape = RoundedCornerShape(100.dp)),
-                        colors = IconButtonDefaults.iconButtonColors
-                            (
-                            containerColor = Color.White.copy(alpha = 0.1f),
-                            contentColor = Color.Transparent
-                        ),
-
-                        onClick = { textState = "" }) {
-                        //modifier = Modifier.background(lightBlue).clip(shape = RoundedCornerShape(50.dp)
-                        Icon(
-                            imageVector = Icons.Outlined.Close,
-                            tint = Color.Black,
-                            contentDescription = null,
-
-                            )
-                    }
-                }
-            },
-            leadingIcon = {
+        singleLine = true,
+        trailingIcon = {
+            if (textState.isNotEmpty()) {
                 IconButton(
+                    modifier = Modifier
+                        //.graphicsLayer {shape = RoundedCornerShape(50.dp)  }
+                        .width(48.dp)
+                        .height(48.dp)
+                        .padding(0.dp)
+                        .clip(shape = RoundedCornerShape(100.dp)),
                     colors = IconButtonDefaults.iconButtonColors
                         (
                         containerColor = Color.White.copy(alpha = 0.1f),
@@ -233,23 +214,41 @@ fun CustomTextField() {
                     onClick = { textState = "" }) {
                     //modifier = Modifier.background(lightBlue).clip(shape = RoundedCornerShape(50.dp)
                     Icon(
-                        imageVector = Icons.Outlined.Email,
+                        imageVector = Icons.Outlined.Close,
                         tint = Color.Black,
                         contentDescription = null,
 
                         )
                 }
             }
-        )
-        Text(
-            text = "${textState.length} / $maxLength",
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 4.dp),
-            textAlign = TextAlign.End,
-            color = blue
-        )
+        },
+        leadingIcon = {
+            IconButton(
+                colors = IconButtonDefaults.iconButtonColors
+                    (
+                    containerColor = Color.White.copy(alpha = 0.1f),
+                    contentColor = Color.Transparent
+                ),
 
+                onClick = { textState = "" }) {
+                //modifier = Modifier.background(lightBlue).clip(shape = RoundedCornerShape(50.dp)
+                Icon(
+                    imageVector = Icons.Outlined.Email,
+                    tint = Color.Black,
+                    contentDescription = null,
+
+                    )
+            }
+        }
+    )
+    Text(
+        text = "${textState.length} / $maxLength",
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 4.dp),
+        textAlign = TextAlign.End,
+        color = blue
+    )
 
 
 }

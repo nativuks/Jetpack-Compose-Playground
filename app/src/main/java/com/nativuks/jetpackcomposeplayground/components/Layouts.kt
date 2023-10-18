@@ -43,7 +43,7 @@ fun MyColumn() {
     Column(
         Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.SpaceBetween
+             , verticalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
             "Ejemplo1", modifier = Modifier
